@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<robot>
+  <gazebo>
+    <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <ros>
+        <namespace>$(arg namespace)</namespace>
+      </ros>
+      <robot_param>robot_description</robot_param>
+      <robot_param_node>robot_state_publisher</robot_param_node>
+      <parameters>$(find wcr_launcher)/config/wcr_controller.yaml</parameters>
+      <controller_manager_name>controller_manager</controller_manager_name>
+    </plugin>
+    <plugin filename="ignition-gazebo-thruster-system" name="ignition::gazebo::systems::Thruster">
+      <namespace>$(arg namespace)</namespace>
+      <joint_name>EDF_propeller_joint</joint_name>
+      <thrust_coefficient>0.1</thrust_coefficient>
+      <fluid_density>1.225</fluid_density>
+      <propeller_diameter>0.11</propeller_diameter>
+      <velocity_control>true</velocity_control>
+    </plugin>
+    <plugin filename="ignition-gazebo-thruster-system" name="ignition::gazebo::systems::Thruster">
+      <namespace>$(arg namespace)</namespace>
+      <joint_name>FL_propeller_joint</joint_name>
+      <thrust_coefficient>0.1</thrust_coefficient>
+      <fluid_density>1.225</fluid_density>
+      <propeller_diameter>0.2286</propeller_diameter>
+      <velocity_control>true</velocity_control>
+    </plugin>
+    <plugin filename="ignition-gazebo-thruster-system" name="ignition::gazebo::systems::Thruster">
+      <namespace>$(arg namespace)</namespace>
+      <joint_name>FR_propeller_joint</joint_name>
+      <thrust_coefficient>0.1</thrust_coefficient>
+      <fluid_density>1.225</fluid_density>
+      <propeller_diameter>0.2286</propeller_diameter>
+      <velocity_control>true</velocity_control>
+    </plugin>
+    <plugin filename="ignition-gazebo-thruster-system" name="ignition::gazebo::systems::Thruster">
+      <namespace>$(arg namespace)</namespace>
+      <joint_name>BL_propeller_joint</joint_name>
+      <thrust_coefficient>0.1</thrust_coefficient>
+      <fluid_density>1.225</fluid_density>
+      <propeller_diameter>0.2286</propeller_diameter>
+      <velocity_control>true</velocity_control>
+    </plugin>
+    <plugin filename="ignition-gazebo-thruster-system" name="ignition::gazebo::systems::Thruster">
+      <namespace>$(arg namespace)</namespace>
+      <joint_name>BR_propeller_joint</joint_name>
+      <thrust_coefficient>0.1</thrust_coefficient>
+      <fluid_density>1.225</fluid_density>
+      <propeller_diameter>0.2286</propeller_diameter>
+      <velocity_control>true</velocity_control>
+    </plugin>
+  </gazebo>
+</robot>

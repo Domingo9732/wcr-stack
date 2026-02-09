@@ -1,0 +1,47 @@
+# Robot Physical Parameters Configuration
+
+# Geometry
+length: 0.225
+width: 0.225
+chassis_mass: 3.0
+chassis_inertia: 0.003
+
+# Steering System
+steering_height: 0.05029
+steering_mass: 0.1
+steering_effort: 5.0
+steering_velocity: 5.23598775 # default
+steering_i_xx: 0.0001
+steering_i_xy: 0.0001
+
+# Wheel System
+wheel_height: -0.035250
+wheel_mass: 0.1
+wheel_effort: 100.0
+wheel_velocity: 5.23598775 # default
+wheel_i_xx: 0.0002
+wheel_i_xy: 0.0001
+
+# Propeller System
+prop_x: 0.03561
+prop_y: 0.18981
+prop_height: 0.09991
+prop_mass: 0.015
+prop_effort: 1.0
+prop_velocity: 1000.0
+prop_limit_upper: -1e16
+prop_limit_lower: 1e16
+prop_i_xy: 0.0001
+prop_i_z: 0.0002
+
+# EDF System
+edf_mass: 0.1
+edf_effort: 100.0
+edf_velocity: 1000.0
+edf_limit_upper: -1e16
+edf_limit_lower: 1e16
+edf_i_xy: 0.001
+edf_i_z: 0.002
+
+# Testing/Default Values
+default_inertia: 0.001

@@ -1,0 +1,21 @@
+# Gazebo Launch Parameters
+
+# Simulation mode
+sim: true
+
+# Robot variant (classic/effort/velocity/mimic/mix/mock)
+variant: "mock"
+namespace: "wcr"
+controller: true
+propeller_control: false
+
+# URDF file
+urdf_file: "wcr.urdf.xacro"
+
+# Gazebo settings
+use_sim_time: true
+spawn_z_height: 0.2
+gz_args: "-r -v4"
+
+# World file
+world_file: "ramp_world.sdf"
