@@ -11,13 +11,13 @@ steering_height: 0.05029
 steering_mass: 0.1
 steering_effort: 5.0
 steering_velocity: 5.23598775 # default
-steering_i_xx: 0.0001
-steering_i_xy: 0.0001
+steering_i_xx: 0.00002
+steering_i_xy: 0.00000
 
 # Wheel System
 wheel_height: -0.035250
 wheel_mass: 0.1
-wheel_effort: 100.0
+wheel_effort: 5.0
 wheel_velocity: 5.23598775 # default
 wheel_i_xx: 0.0002
 wheel_i_xy: 0.0001

@@ -51,4 +51,30 @@
       <velocity_control>true</velocity_control>
     </plugin>
   </gazebo>
+  <gazebo reference="imu_link">
+    <sensor name="imu_sensor" type="imu">
+      <update_rate>100</update_rate>
+      <always_on>true</always_on>
+      <topic>imu</topic>
+      <visualize>true</visualize>
+      <imu>
+          <angular_velocity>
+              <noise type="gaussian">
+                  <mean>0.0</mean>
+                  <stddev>0.01</stddev>
+              </noise>
+          </angular_velocity>
+          <linear_acceleration>
+              <noise type="gaussian">
+                  <mean>0.0</mean>
+                  <stddev>0.1</stddev>
+              </noise>
+          </linear_acceleration>
+      </imu>
+      <plugin filename="libignition-gazebo-imu-system.so" name="ignition::gazebo::systems::Imu">
+      </plugin>
+      <gz_frame_id>imu_link</gz_frame_id>  
+    </sensor>
+  </gazebo>
+
 </robot>
