@@ -425,4 +425,13 @@
 		</collision>
 	</link>
 
+    <gazebo reference="imu_link">
+        <sensor name="imu_sensor" type="imu">
+            <update_rate>100</update_rate>
+            <always_on>true</always_on>
+            <topic>imu</topic>
+            <visualize>true</visualize>
+        </sensor>
+    </gazebo>
+
 </robot>

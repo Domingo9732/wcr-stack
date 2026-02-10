@@ -17,11 +17,11 @@ class OdometryPublisher : public rclcpp::Node
     : Node("minimal_subscriber")
     {
       subscription_joint_states_ = this->create_subscription<sensor_msgs::msg::JointState>(
-            "/wcr/joint_states",      
+            "joint_states",      
             10,                   
             std::bind(&OdometryPublisher::joint_state_callback, this, std::placeholders::_1)
       );
-      publisher_odom_ = this->create_publisher<nav_msgs::msg::Odometry>("wcr/odom", 10);
+      publisher_odom_ = this->create_publisher<nav_msgs::msg::Odometry>("odom", 10);
       tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
       odometry_reset_ = this->create_service<std_srvs::srv::Trigger>("reset_odometry", std::bind(&OdometryPublisher::odom_reset, this, std::placeholders::_1, std::placeholders::_2));
 
@@ -67,9 +67,9 @@ class OdometryPublisher : public rclcpp::Node
       double r_w[4] = {this->get_parameter("r_w_1").as_double(), this->get_parameter("r_w_2").as_double(), this->get_parameter("r_w_3").as_double(), this->get_parameter("r_w_4").as_double()};
 
       //robot states in robot frame
-      double v_x;
-      double v_y;
-      double omega;
+      double v_x = 0.0;
+      double v_y = 0.0;
+      double omega = 0.0;
       double W[4];
       double q[8] = {msg->velocity[joint_index_["FL_wheel"]], 
         msg->velocity[joint_index_["BL_wheel"]], 

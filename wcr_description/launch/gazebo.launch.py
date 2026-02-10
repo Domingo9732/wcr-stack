@@ -61,5 +61,5 @@ def generate_launch_description():
     return LaunchDescription([
         gazebo,
         spawn, 
-        #bridge,
+        bridge,
     ])

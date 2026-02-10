@@ -50,6 +50,9 @@ def generate_launch_description():
         executable="inv_kin_controller",
         name="inv_kin_controller",
         namespace=config.namespace,
+        parameters=[{
+            'use_sim_time': config.use_sim_time
+        }],
     )
 
     # ROSBridge server (for Visualization)
@@ -59,11 +62,15 @@ def generate_launch_description():
         )
     )
 
-    # Teleop cmd vel to controller node
-    keyboard_node = Node(
-        package="wcr_keyboard",
-        executable="twist_to_controller",
-        name="twist_to_controller",
+    # Odom node
+    odometry = Node(
+        package="wcr_odometry",
+        executable="odometry",
+        name="odometry",
+        namespace=config.namespace,
+        parameters=[{
+            'use_sim_time': config.use_sim_time
+        }],
     )
 
     return LaunchDescription([
@@ -72,5 +79,5 @@ def generate_launch_description():
         control_launch,
         controller_launch,
         rosbridge_server,
-        #keyboard_node
+        odometry
     ])

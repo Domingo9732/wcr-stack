@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.7">
-  <world name="wall_transition_world">
+  <world name="ramp_world">
 
     <!-- Basic scene -->
     <gravity>0 0 -9.81</gravity>
